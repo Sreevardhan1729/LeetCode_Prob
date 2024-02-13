@@ -1,12 +1,11 @@
 class Solution {
     static bool check(string s){
-        int len=s.length()-1;
-        for(int i=0;i<(len+1)/2;i++){
-            if(s[i]!=s[len-i]){
-                return false;
-            }
+        int i=0,j=s.length()-1;
+        while(i<j && s[i]==s[j]){
+            i++;
+            j--;
         }
-        return true;
+        return i>=j;
     }
 public:
     string firstPalindrome(vector<string>& words) {
